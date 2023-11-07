@@ -62,7 +62,7 @@ def train_and_evaluate(config):
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weightDecay)
     best_val_mse = float("inf")
     sched = torch.optim.lr_scheduler.ExponentialLR(
-        optimizer=optimizer, gamma=0.9, last_epoch=100
+        optimizer=optimizer, gamma=0.9, last_epoch=-1
     )
 
     for epoch in range(epochs):
